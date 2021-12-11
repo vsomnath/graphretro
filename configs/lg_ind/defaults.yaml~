@@ -1,0 +1,44 @@
+model:
+    value: lg_ind
+mpnn:
+    value: graph_feat
+rnn_type:
+    value: gru
+mpn_size:
+    value: 300
+depth:
+    value: 10
+dropout_mpn:
+    value: 0.15
+embed_size:
+    value: 200
+mlp_size:
+    value: 300
+dropout_mlp:
+    value: 0.3
+clip_norm:
+    value: 10.0
+scheduler_type:
+    value: plateau
+metric_thresh:
+    value: 0.01
+patience:
+    value: 5
+anneal_rate:
+    value: 0.6
+lr:
+    value: 0.001
+use_rxn_class:
+    value: False
+use_h_labels:
+    value: True
+use_grad_noise:
+    value: True
+use_prev_pred:
+    value: True
+print_every:
+    value: 200
+eval_every:
+    value: 700
+epochs:
+    value: 100
