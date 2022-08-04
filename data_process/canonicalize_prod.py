@@ -21,6 +21,30 @@ def canonicalize_prod(p):
     p = Chem.MolToSmiles(p_mol)
     return p
 
+def remove_amap_not_in_product(rxn_smi):
+    """
+    Corrects the atom map numbers of atoms only in reactants. 
+    This correction helps avoid the issue of duplicate atom mapping
+    after the canonicalization step.
+    """
+    r, p = rxn_smi.split(">>")
+
+    pmol = Chem.MolFromSmiles(p)
+    pmol_amaps = set([atom.GetAtomMapNum() for atom in pmol.GetAtoms()])
+    max_amap = max(pmol_amaps) #Atoms only in reactants are labelled starting with max_amap
+
+    rmol  = Chem.MolFromSmiles(r)
+
+    for atom in rmol.GetAtoms():
+        amap_num = atom.GetAtomMapNum()
+        if amap_num not in pmol_amaps:
+            atom.SetAtomMapNum(max_amap+1)
+            max_amap += 1
+
+    r_updated = Chem.MolToSmiles(rmol)
+    rxn_smi_updated = r_updated + ">>" + p
+    return rxn_smi_updated
+
 def canonicalize(smiles):
     try:
         tmp = Chem.MolFromSmiles(smiles)
