@@ -103,7 +103,7 @@ def main():
         uspto_id, class_id, rxn_smi = element['id'], element['class'], element['reactants>reagents>production']
         
         rxn_smi_new = remove_amap_not_in_product(rxn_smi)
-        rxn_smi_new, _ = remap_rxn_smi(rxn_smi)
+        rxn_smi_new, _ = remap_rxn_smi(rxn_smi_new)
         new_dict['id'].append(uspto_id)
         new_dict['class'].append(class_id)
         new_dict['reactants>reagents>production'].append(rxn_smi_new)
