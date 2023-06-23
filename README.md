@@ -58,11 +58,11 @@ python data_process/lg_edits/lg_tensors.py
 ## Run a Model
 Trained models are stored in `experiments/`. You can override this by adjusting `--exp_dir` before training.
 Model configurations are stored in `config/MODEL_NAME` 
-where `MODEL_NAME` is one of `{single_edit, lg_classifier}`.
+where `MODEL_NAME` is one of `{single_edit, lg_ind}`.
 
 To run a model, 
 ```
-python scripts/benchmarks/run_model.py --config_file config/MODEL_NAME/defaults.yaml
+python scripts/benchmarks/run_model.py --config_file configs/MODEL_NAME/defaults.yaml
 ```
 NOTE: We recently updated the code to use wandb for experiment tracking. You would need to setup [wandb](https://docs.wandb.ai/quickstart) before being able to train a model.
 
