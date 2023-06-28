@@ -196,6 +196,9 @@ def get_args():
 
 if __name__ == "__main__":
     args = get_args()
+    
+    if not os.path.exists(args.out_dir):
+       os.mkdir(args.out_dir)
 
     if args.sweep:
         sweep(args)
