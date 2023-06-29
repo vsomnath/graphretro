@@ -4,10 +4,10 @@
 
 This is the official [PyTorch](https://pytorch.org/) implementation for _GraphRetro_ ([Somnath et al. 2021](https://openreview.net/pdf?id=SnONpXZ_uQ_)), a graph based model for one-step retrosynthesis prediction. Our model achieves the transformation from products to reactants using a two stage decomposition: 
 
+![graph-retro-overview](./assets/graphretro.png)
+
 a) __Edit Prediction__: Identifies edits given a product molecule, which upon application give intermediate molecules called _synthons_\
 b) __Synthon Completion__: Completes _synthons_ into reactants by adding subgraphs called _leaving groups_ from a precomputed vocabulary. 
-
-![graph-retro-overview](./assets/graphretro.png)
 
 ## Setup
 
