@@ -7,6 +7,8 @@ This is the official [PyTorch](https://pytorch.org/) implementation for _GraphRe
 a) __Edit Prediction__: Identifies edits given a product molecule, which upon application give intermediate molecules called _synthons_\
 b) __Synthon Completion__: Completes _synthons_ into reactants by adding subgraphs called _leaving groups_ from a precomputed vocabulary. 
 
+![graph-retro-overview](./assets/graphretro.png)
+
 ## Setup
 
 This assumes conda is installed on your system \
